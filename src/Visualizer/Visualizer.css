@@ -2,24 +2,77 @@
 
 /* BACKGROUND COLOR */
 body {
-  background-color: #0a748b;
+  background: linear-gradient(90deg, #237588 3.5%, rgb(106, 81, 143) 60%);
 }
 
 /* CONTAINER FOR THE ARRAY */
 .array--container {
   display: flexbox;
   align-items: center;
+  margin-bottom: 50px;
   
 }
 
-/* EACH ARRAY IN THE CONTAINER */
+/* INDIVIDUAL ARRAY BARS IN THE CONTAINER */
 .array--bar {
-  width: 2px;
+  width: 5px;
   background-color: rgb(253, 165, 2);
   display: inline-block;
-  margin: 1px;
+  margin: 1.5px;
 }
 
+/* BUTTONS */
+.button {
+  display: inline-flex;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  color: #0a748b;
+  border-radius: 5px;
+  border-color: black;
+  background-color:silver;
+  box-shadow: -5px 5px rgba(0, 0, 0, 0.582);
+ }
+
+ /*NAV BAR ICON*/
+.nav--icon {
+  display: inline-block;
+  height: 60px;
+  margin-bottom: -9px;
+
+  
+}
+
+ /*NAV BAR TEXT*/
+.nav--text {
+    color: #0a748b;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.07em;
+    text-shadow: 0.5px 2px rgba(0, 0, 0, 0.288);
+}
+
+ /*NAV BAR*/
+.nav--bar {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  background:rgba(255, 255, 255, 0.493);
+  margin-bottom: 50px;
+  padding: 0px 25px;
+}
+
+ /*NAV BAR*/
+.nav--buttons {
+  display: inline-flex;
+  gap: 20px;
+  align-items: right;
 
 
+}
 
+.info--text {
+  max-width: 100%;
+  color: white;
+  
+}
