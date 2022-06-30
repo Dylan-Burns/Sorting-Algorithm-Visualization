@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Sorting Algorithm Visualizer
+
+<img width="1792" alt="Screen Shot 2022-06-29 at 11 13 00 PM" src="https://user-images.githubusercontent.com/65887526/176605699-c94c81e2-35d7-4af0-b5e8-46c1594e3fb1.png">
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
