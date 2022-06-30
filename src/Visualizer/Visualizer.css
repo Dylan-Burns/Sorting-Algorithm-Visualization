@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,500&display=swap");
+
+/* BACKGROUND COLOR */
+body {
+  background-color: #0a748b;
+}
+
+/* CONTAINER FOR THE ARRAY */
+.array--container {
+  display: flexbox;
+  align-items: center;
+  
+}
+
+/* EACH ARRAY IN THE CONTAINER */
+.array--bar {
+  width: 2px;
+  background-color: rgb(253, 165, 2);
+  display: inline-block;
+  margin: 1px;
+}
+
+
+
+
