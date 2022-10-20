@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Sorting-Algorithm-Visualizer/static/css/main.9d4aa44a.css",
+    "main.js": "/Sorting-Algorithm-Visualizer/static/js/main.9b7b7f91.js",
+    "static/js/787.9c767a09.chunk.js": "/Sorting-Algorithm-Visualizer/static/js/787.9c767a09.chunk.js",
+    "index.html": "/Sorting-Algorithm-Visualizer/index.html",
+    "main.9d4aa44a.css.map": "/Sorting-Algorithm-Visualizer/static/css/main.9d4aa44a.css.map",
+    "main.9b7b7f91.js.map": "/Sorting-Algorithm-Visualizer/static/js/main.9b7b7f91.js.map",
+    "787.9c767a09.chunk.js.map": "/Sorting-Algorithm-Visualizer/static/js/787.9c767a09.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d4aa44a.css",
+    "static/js/main.9b7b7f91.js"
+  ]
+}
