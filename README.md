@@ -1,6 +1,6 @@
 # Sorting Algorithm Visualizer
 
-<img width="1792" alt="Screen Shot 2022-06-29 at 11 13 00 PM" src="https://user-images.githubusercontent.com/65887526/176605699-c94c81e2-35d7-4af0-b5e8-46c1594e3fb1.png">
+![Screen Recording 2022-10-19 at 6 51 55 PM-2](https://user-images.githubusercontent.com/65887526/196841983-810c279d-4ac2-42c3-bd19-880929d9d178.gif)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
