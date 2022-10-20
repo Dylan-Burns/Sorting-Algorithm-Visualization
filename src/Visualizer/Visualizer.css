@@ -13,7 +13,8 @@ body {
 .array--container { 
   display: flexbox;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
+
 }
 
 /* INDIVIDUAL ARRAY BARS IN THE CONTAINER */
@@ -24,8 +25,8 @@ body {
   margin: 1.5px;
 }
 
-/* BUTTONS */
-.button {
+/* CONTAINER FOR NAV BAR BUTTONS */
+.button{
   display: inline-flex;
   text-align: center;
   font-family: "Rubik", sans-serif;
@@ -38,14 +39,14 @@ body {
  }
 
 
- /*NAV BAR ICON*/
+ /* NAV BAR ICON */
 .nav--icon {
   display: inline-block;
   height: 60px;
   margin-bottom: -9px;
 }
 
- /*NAV BAR TEXT*/
+ /* NAV BAR TEXT */
 .nav--text {
     color: white;
     font-weight: 700;
@@ -55,7 +56,7 @@ body {
     text-shadow: 0.5px 2px rgba(0, 0, 0, 0.288);
 }
 
- /*NAV BAR*/
+ /* NAV BAR */
 .nav--bar {
   justify-content: space-between;
   display: flex;
@@ -65,20 +66,27 @@ body {
   padding: 0px 25px;
 }
 
- /*NAV BAR*/
+ /* NAV BAR BUTTONS */
 .nav--buttons {
   display: inline-flex;
   gap: 20px;
   align-items: right;
 }
 
+/* INFORMATION CONTAINER */
 .info {
   position: relative;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  max-width:65%;
+  max-width: 66%;
   justify-content: space-around;
   color: white;
   font-family: "Rubik", sans-serif;
+  margin-top: 20px;
+}
+
+/* INFORMATION ELEMENTS */
+.info--text {
+  padding: 20px;
 }
