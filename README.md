@@ -31,21 +31,21 @@ The Sorting Algorithm Visualizer is a dynamic and educational tool that brings t
 
 ## Getting Started
 1. Clone this repository onto your machine
-   '''sh
+   ```sh
      git clone https://github.com/Dylan-Burns/Sorting-Algorithm-Visualizer.git
-   '''
+   ```
 2. change into root directory
-   '''sh
+   ```sh
      cd main
-   '''
+   ```
 3. install node packages
-   '''sh
+   ```sh
      npm install
-   '''
+   ```
 4. start the application
-   '''sh
+   ```sh
    npm start
-   '''
+   ```
 
 ## Limitations
 These visualizations don't show the efficiency of the algorithms.<br>
