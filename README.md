@@ -2,11 +2,6 @@
 
 ![Screen Recording 2022-10-19 at 6 51 55 PM-2](https://user-images.githubusercontent.com/65887526/196841983-810c279d-4ac2-42c3-bd19-880929d9d178.gif)
 
-
-Sorting-Algorithms-Blender
-==========================
-
-
 Table of contents
 =================
 
