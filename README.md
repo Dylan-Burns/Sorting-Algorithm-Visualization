@@ -10,6 +10,7 @@ Table of contents
       * [Description](#description)
       * [Getting Started](#getting-started)
       * [Limitations](#limitations)
+      * [Potential Updates](#potential-updates)
    * [Sorting Algorithms](#sorting-algorithms)
       * [Bubble Sort](#bubble-sort)
       * [Insertion Sort](#insertion-sort)
@@ -29,7 +30,22 @@ Introduction
 The Sorting Algorithm Visualizer is a dynamic and educational tool that brings to life the mechanics of different sorting algorithms. Its primary aim is to help users understand the intricacies of how various sorting techniques function, the differences between them, and their efficiency in various scenarios.
 
 ## Getting Started
-
+1. Clone this repository onto your machine
+   '''sh
+     git clone https://github.com/Dylan-Burns/Sorting-Algorithm-Visualizer.git
+   '''
+2. change into root directory
+   '''sh
+     cd main
+   '''
+3. install node packages
+   '''sh
+     npm install
+   '''
+4. start the application
+   '''sh
+   npm start
+   '''
 
 ## Limitations
 These visualizations don't show the efficiency of the algorithms.<br>
@@ -37,8 +53,14 @@ They only visualize movement of the elements within the array.<br>
 But the array access and comparison counters are indicators of the time complexity of the algorithms.<br>
 For more information about the time complexity, you can take a look at the [Big O Table](#table-of-sorting-algorithms).<br>
 
-<strong>Contributions to this project with either ideas from the list or your own are welcome.</strong>
-
+## Potential Updates
+ A list of potential updates to improve the sorting visualizer
+ * Add variant sorting algorithms
+ * Add new sorting visualizations
+ * Add Array Access counter
+ * Add Comparisons counter
+ * Increase efficiency allowing for larger Array sorting
+ * Add Audibilization to the sorting algorithms
 
 Sorting Algorithms
 ==================
