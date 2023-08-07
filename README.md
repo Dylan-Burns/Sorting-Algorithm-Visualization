@@ -47,11 +47,10 @@ For more information about the time complexity, you can take a look at the [Big 
 
 <strong>Contributions to this project with either ideas from the list or your own are welcome.</strong>
 
-<div align="center">
-  
+
 Sorting Algorithms
 ==================
-</div>
+
 
 ## Bubble Sort
 <p>
