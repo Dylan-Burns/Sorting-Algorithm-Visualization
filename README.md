@@ -51,6 +51,7 @@ For more information about the time complexity, you can take a look at the [Big 
   
 Sorting Algorithms
 ==================
+</div>
 
 ## Bubble Sort
 <p>
