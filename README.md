@@ -13,9 +13,6 @@ Table of contents
    * [Sorting Algorithms](#sorting-algorithms)
       * [Bubble Sort](#bubble-sort)
       * [Insertion Sort](#insertion-sort)
-      * [Selection Sort](#selection-sort)
-      * [Heap Sort](#heap-sort)
-      * [Shell Sort](#shell-sort)
       * [Merge Sort](#merge-sort)
       * [Quick Sort](#quick-sort)
    * [Big O](#big-o)
@@ -69,41 +66,6 @@ In essence, each item “bubbles” up to the location where it belongs.
 </ul>
 It splits the given array into sorted and unsorted parts, 
 then the values from the unsorted parts are picked and placed at the correct position in the sorted part.</p>
-
-## Selection Sort
-
-The algorithm maintains two subarrays in a given array.
-<ul>
-<li>The subarray which is already sorted.</li>
-<li>Remaining subarray which is unsorted.</li>
-</ul>
-<p>In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.</p>
-
-## Heap Sort
-
-Based on the binary heap data structure, heap sort is mainly considered as a comparison-based sorting algorithm.<br>
-In this sorting technique, at first, the minimum element is found out and then the minimum element gets placed at its right position at the beginning of the array.<br>
-For the rest of the elements, the same process gets repeated.<br>
-So, we can say that heap sort is quite similar to the selection sort technique.<br>
-Heap sort basically recursively performs two main operations:
-<ul>
-<li>Build a heap H, using the elements of array.</li>
-<li>Repeatedly delete the root element of the heap formed in 1st phase.</li>
-</ul>
-  
-## Shell Sort
-<p>
-The shell sort algorithm extends the insertion sort algorithm and is very efficient in sorting widely unsorted arrays.<br>
-The array is divided into sub-arrays and then insertion sort is applied.<br>
-The algorithm is:
-<ul>
-<li>Calculate the value of the gap.</li>
-<li>Divide the array into these sub-arrays.</li>
-<li>Apply the insertion sort.</li>
-<li>Repeat this process until the complete list is sorted.</li>
-</ul>
-This sorting technique works by sorting elements in pairs, far away from each other and subsequently reduces their gap.<br> The gap is known as the interval. We can calculate this gap/interval with the help of Knuth’s formula.
-</p>
 
 ## Merge Sort
 
