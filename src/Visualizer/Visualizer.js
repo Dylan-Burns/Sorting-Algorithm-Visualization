@@ -34,8 +34,10 @@ export default class Visualizer extends React.Component {
 
         this.state = {
           array: [],
-          isSorting: false, // Add this line
-      }
+          isSorting: false,
+          animationSpeed: 1, // Set a default speed value
+        };
+        
     }
 
     componentDidMount(){
@@ -52,36 +54,40 @@ export default class Visualizer extends React.Component {
         this.setState({ array });
     }
 
+    handleSpeedChange = (event) => {
+      this.setState({ animationSpeed: Number(event.target.value) });
+    };
+    
+
     insertionSort() {
       if(this.state.isSorting) return; // Prevent sorting if already sorting
       this.setState({ isSorting: true }); // Set isSorting to true to disable buttons
       
       const animations = getInsertionSortAnimations(this.state.array);
-        for (let i = 0; i < animations.length; i++) {
-            const isColorChange = animations[i][0] === "comparison1" || animations[i][0] === "comparison2";
-            const arrayBars = document.getElementsByClassName("array--bar");
-            if(isColorChange) {
-                const color = animations[i][0] === "comparison1" ?  this.secondaryColor : this.primaryColor;
-                const [, barOneIndex, barTwoIndex] = animations[i];
-                const barOneStyle = arrayBars[barOneIndex].style;
-                const barTwoStyle = arrayBars[barTwoIndex].style;
-                setTimeout(() => {
-                    barOneStyle.backgroundColor = color;
-                    barTwoStyle.backgroundColor = color;
-                }, i * this.animationSpeed);
-            } else {
-                const [, barIndex, newHeight] = animations[i];
-                const barStyle = arrayBars[barIndex].style;
-                setTimeout(() => {
-                    barStyle.height = `${newHeight}px`;
-                }, i * animationSpeed);
-            }
-        }
-        // Set a timeout for the duration of the animations to re-enable the buttons
-        setTimeout(() => {
+      for (let i = 0; i < animations.length; i++) {
+          const isColorChange = animations[i][0] === "comparison1" || animations[i][0] === "comparison2";
+          const arrayBars = document.getElementsByClassName("array--bar");
+          if(isColorChange) {
+              const color = animations[i][0] === "comparison1" ? this.secondaryColor : this.primaryColor;
+              const [, barOneIndex, barTwoIndex] = animations[i];
+              const barOneStyle = arrayBars[barOneIndex].style;
+              const barTwoStyle = arrayBars[barTwoIndex].style;
+              setTimeout(() => {
+                  barOneStyle.backgroundColor = color;
+                  barTwoStyle.backgroundColor = color;
+              }, i * this.state.animationSpeed);
+          } else {
+              const [, barIndex, newHeight] = animations[i];
+              const barStyle = arrayBars[barIndex].style;
+              setTimeout(() => {
+                  barStyle.height = `${newHeight}px`;
+              }, i * this.state.animationSpeed);
+          }
+      }
+      setTimeout(() => {
           this.setState({ isSorting: false });
-      }, animations.length * this.animationSpeed);
-    }
+      }, animations.length * this.state.animationSpeed);
+  }
 
     bubbleSort() {
         if(this.state.isSorting) return; // Prevent sorting if already sorting
@@ -105,7 +111,7 @@ export default class Visualizer extends React.Component {
             setTimeout(() => {
               barOneStyle.backgroundColor = color;
               barTwoStyle.backgroundColor = color;
-            }, i * this.animationSpeed);
+          }, i * this.state.animationSpeed);
           } else {
             const [, barIndex, newHeight] = animations[i];
             if (barIndex === -1) {
@@ -114,13 +120,13 @@ export default class Visualizer extends React.Component {
             const barStyle = arrayBars[barIndex].style;
             setTimeout(() => {
               barStyle.height = `${newHeight}px`;
-            }, i * this.animationSpeed);
+          }, i * this.state.animationSpeed);
           }
         }
         // Set a timeout for the duration of the animations to re-enable the buttons
         setTimeout(() => {
           this.setState({ isSorting: false });
-        }, animations.length * this.animationSpeed);
+        }, animations.length * this.state.animationSpeed);
     }
 
     quickSort() {
@@ -145,7 +151,7 @@ export default class Visualizer extends React.Component {
             setTimeout(() => {
               barOneStyle.backgroundColor = color;
               barTwoStyle.backgroundColor = color;
-            }, i * this.animationSpeed);
+            }, i * this.state.animationSpeed);
           } else {
             const [, barIndex, newHeight] = animations[i];
             if (barIndex === -1) {
@@ -154,13 +160,13 @@ export default class Visualizer extends React.Component {
             const barStyle = arrayBars[barIndex].style;
             setTimeout(() => {
               barStyle.height = `${newHeight}px`;
-            }, i * this.animationSpeed);
+            }, i * this.state.animationSpeed);
           }
         }
         // Set a timeout for the duration of the animations to re-enable the buttons
         setTimeout(() => {
           this.setState({ isSorting: false });
-        }, animations.length * this.animationSpeed);
+        }, animations.length * this.state.animationSpeed);
     }
 
     mergeSort() {
@@ -180,19 +186,19 @@ export default class Visualizer extends React.Component {
             setTimeout(() => {
               barOneStyle.backgroundColor = color;
               barTwoStyle.backgroundColor = color;
-            }, i * this.animationSpeed);
+            }, i * this.state.animationSpeed);
           } else {
-            setTimeout(() => {
+            setTimeout(() => {  
               const [barOneIdx, newHeight] = animations[i];
               const barOneStyle = arrayBars[barOneIdx].style;
               barOneStyle.height = `${newHeight}px`;
-            }, i * this.animationSpeed);
+            }, i * this.state.animationSpeed);
           }
         }
         // Set a timeout for the duration of the animations to re-enable the buttons
         setTimeout(() => {
           this.setState({ isSorting: false });
-        }, animations.length * this.animationSpeed);
+        }, animations.length * this.state.animationSpeed);
     }
 
     render() {
@@ -207,6 +213,20 @@ export default class Visualizer extends React.Component {
                       Sorting Algorithm Visualizer
                     </h1>
                     
+                    { /* ANIMATION SPEED SLIDER */ }
+                    <div className="slider-container">
+                      <label htmlFor="animation-speed-slider">Animation Speed </label>
+                      <input
+                        id="animation-speed-slider"
+                        type="range"
+                        min="1"
+                        max="10"
+                        value={this.state.animationSpeed}
+                        onChange={this.handleSpeedChange}
+                        step="0.1"
+                      />
+                    </div>
+
                     { /* BUTTONS */ }
                     <div className="nav--buttons">
                         <Button 

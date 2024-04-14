@@ -32,6 +32,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   color: #0a748b;
+  border: 1px solid;
   border-radius: 3px;
   border-color: black;
   background-color:silver;
@@ -89,4 +90,69 @@ body {
 /* INFORMATION ELEMENTS */
 .info--text {
   padding: 20px;
+}
+
+/* ANIMATION SPEED SLIDER */
+/* Style for the slider thumb */
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -3px; 
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0a748b; /* Thumb color */
+  cursor: pointer;
+}
+
+.slider-container input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0a748b; /* Thumb color */
+  cursor: pointer;
+  box-shadow: -2px 2px rgba(0, 0, 0, 0.582);
+}
+
+/* Style for the slider track */
+.slider-container input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: silver; /* Track color */
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.582);
+}
+
+.slider-container input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: silver; /* Track color */
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.582);
+}
+
+/* Style for the slider container */
+.slider-container {
+  margin: 0 20px;
+  background: silver;
+  padding: 6px 15px;
+  border-radius: 3px;
+  box-shadow: -5px 5px rgba(0, 0, 0, 0.582);
+
+  display: inline-flex;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  color: #0a748b;
+  border: 1px solid;
+  border-color: black;
+}
+
+/* Adjust the font style to match buttons */
+.slider-container label {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  color: #0a748b;
 }
