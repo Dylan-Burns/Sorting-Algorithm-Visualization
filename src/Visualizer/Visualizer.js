@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react"
 import React from "react"
 import "./Visualizer.css";
 import Button from "../components/Button";
@@ -34,10 +33,9 @@ export default class Visualizer extends React.Component {
         this.barHeight = screenHeight - 500;
 
         this.state = {
-            array: [],
-           
-
-        }
+          array: [],
+          isSorting: false, // Add this line
+      }
     }
 
     componentDidMount(){
@@ -55,7 +53,10 @@ export default class Visualizer extends React.Component {
     }
 
     insertionSort() {
-        const animations = getInsertionSortAnimations(this.state.array);
+      if(this.state.isSorting) return; // Prevent sorting if already sorting
+      this.setState({ isSorting: true }); // Set isSorting to true to disable buttons
+      
+      const animations = getInsertionSortAnimations(this.state.array);
         for (let i = 0; i < animations.length; i++) {
             const isColorChange = animations[i][0] === "comparison1" || animations[i][0] === "comparison2";
             const arrayBars = document.getElementsByClassName("array--bar");
@@ -76,9 +77,16 @@ export default class Visualizer extends React.Component {
                 }, i * animationSpeed);
             }
         }
+        // Set a timeout for the duration of the animations to re-enable the buttons
+        setTimeout(() => {
+          this.setState({ isSorting: false });
+      }, animations.length * this.animationSpeed);
     }
 
     bubbleSort() {
+        if(this.state.isSorting) return; // Prevent sorting if already sorting
+        this.setState({ isSorting: true }); // Set isSorting to true to disable buttons
+
         // Handles displaying bubble sort animations
         const animations = getBubbleSortAnimations(this.state.array);
         for (let i = 0; i < animations.length; i++) {
@@ -109,9 +117,16 @@ export default class Visualizer extends React.Component {
             }, i * this.animationSpeed);
           }
         }
+        // Set a timeout for the duration of the animations to re-enable the buttons
+        setTimeout(() => {
+          this.setState({ isSorting: false });
+        }, animations.length * this.animationSpeed);
     }
 
     quickSort() {
+        if(this.state.isSorting) return; // Prevent sorting if already sorting
+        this.setState({ isSorting: true }); // Set isSorting to true to disable buttons
+
         // Handles displaying quick sort animations
         const animations = getQuickSortAnimations(this.state.array);
         for (let i = 0; i < animations.length; i++) {
@@ -142,9 +157,16 @@ export default class Visualizer extends React.Component {
             }, i * this.animationSpeed);
           }
         }
+        // Set a timeout for the duration of the animations to re-enable the buttons
+        setTimeout(() => {
+          this.setState({ isSorting: false });
+        }, animations.length * this.animationSpeed);
     }
 
     mergeSort() {
+        if(this.state.isSorting) return; // Prevent sorting if already sorting
+        this.setState({ isSorting: true }); // Set isSorting to true to disable buttons
+        
         // Handles displaying merge sort animations
         const animations = getMergeSortAnimations(this.state.array);
         for (let i = 0; i < animations.length; i++) {
@@ -167,71 +189,63 @@ export default class Visualizer extends React.Component {
             }, i * this.animationSpeed);
           }
         }
+        // Set a timeout for the duration of the animations to re-enable the buttons
+        setTimeout(() => {
+          this.setState({ isSorting: false });
+        }, animations.length * this.animationSpeed);
     }
-
-   
 
     render() {
         const { array } = this.state;
         return (
             <div className="array--container">
-                
                 <nav className="nav--bar">
 
                     { /* NAVBAR */ }
-                    <h1 className="nav--text">  <img src={icon} className="nav--icon" />Sorting Algorithm Visualizer</h1>
+                    <h1 className="nav--text">
+                      <img src={icon} className="nav--icon" alt="Sorting Algorithm Visualizer" />
+                      Sorting Algorithm Visualizer
+                    </h1>
                     
                     { /* BUTTONS */ }
                     <div className="nav--buttons">
                         <Button 
                            name="Generate New Array"   
                            handleClick={() => this.resetArray()}
-                         
-                           
+                           disabled={this.state.isSorting} // Disable button if isSorting is true
                         />
-   
                        <Button 
                            name="Merge Sort"
                            handleClick={() => this.mergeSort()}
-                    
+                           disabled={this.state.isSorting} // Disable button if isSorting is true
                         />
-   
                        <Button 
                            name="Quick Sort"
                            handleClick={() => this.quickSort()}
-                          
+                           disabled={this.state.isSorting} // Disable button if isSorting is true
                         />
-   
                        <Button 
                            name="Insertion Sort"
                            handleClick={() => this.insertionSort()}
-                          
+                           disabled={this.state.isSorting} // Disable button if isSorting is true
                         />
-   
                        <Button 
                            name="Bubble Sort"
                            handleClick={() => this.bubbleSort()}
-                           
+                           disabled={this.state.isSorting} // Disable button if isSorting is true
                         />                        
                     </div>
                 </nav>
-
                 <div>
                     { /* ARRAY CONTAINER */ }
                     {array.map((value, index) => (
                         <div className="array--bar" key={index} style={{ height: `${value}px` }}></div>
                     ))}
-
                 </div>
-
                 <Info />
-               
-                
-            
             </div>
         );  
     }
-    
 }
 
 export function getRandomNumber(min, max) {
